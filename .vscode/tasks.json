@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build & Run C",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "${file}",                                 // ton fichier actuel
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compile et exécute le fichier C actuel",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "runOptions": {
+                "runOn": "default"
+            }
+        },
+        {
+            "label": "Run compiled C file",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "group": "none",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
+        }
+    ]
+}
